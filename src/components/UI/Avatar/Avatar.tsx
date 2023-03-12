@@ -1,6 +1,7 @@
 import { FC } from "react";
 import styled, { css } from "styled-components";
 import { AvatarVariants } from "@/helpers/interfaces";
+import defaultAvatar from "@/assets/img/default-user.png";
 
 interface IAvatar {
   img: {
@@ -107,12 +108,18 @@ export const Avatar: FC<IAvatar> = (props): JSX.Element => {
     onClick
   } = props;
 
+  const handleClick = () => {
+    if (isClickable && onClick) {
+      onClick()
+    }
+  }
+
   return (
     <StyledAvatar
       variant={variant}
-      onClick={() => isClickable && onClick ? onClick : null}
+      onClick={handleClick}
     >
-      <StyledImg src={img.src} alt={img.alt} />
+      <StyledImg src={img.src ? img.src : defaultAvatar} alt={img.alt ? img.alt : ""} />
     </StyledAvatar>
   );
 }
