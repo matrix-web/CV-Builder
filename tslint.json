@@ -1,0 +1,63 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:latest",
+    "tslint-react",
+    "tslint-eslint-rules",
+    "tslint-config-prettier"
+  ],
+  "jsRules": {},
+  "rulesDirectory": [],
+  "parserOptions": {
+    "ecmaVersion": 2015
+  },
+  "paths": {
+    "@/hooks/*": ["src/hooks/*"],
+    "@/components/*": ["src/components/*"],
+    "@/pages/*": ["src/pages/*"],
+    "@/layouts/*": ["src/layouts/*"],
+    "@/helpers/*": ["src/helpers/*"],
+    "@/assets/*": ["src/assets/*"],
+    "@/packages/*": ["src/packages/*"]
+  },
+  "plugins": ["react", "@typescript-eslint/eslint-plugin", "prettier"],
+  "rules": {
+    "curly": false,
+    "no-debugger": false,
+    "no-console": false,
+    "jsx-no-lambda": false,
+    "no-shadowed-variable": false,
+    "interface-over-type-literal": false,
+    "react/prop-types": 0,
+    "no-implicit-dependencies": false,
+    "no-submodule-imports": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "array-type": false,
+    "ban-ts-ignore": true,
+    "no-empty-interface": true,
+    "only-arrow-functions": true,
+    "promise-function-async": true,
+    "no-async-without-await": true,
+    "triple-equals": true,
+    "no-default-export": true,
+    "no-duplicate-imports": true,
+    "prefer-const": true,
+    "interface-name": true,
+    "newline-per-chained-call": true,
+    "one-variable-per-declaration": true,
+    "newline-before-return": true,
+    "no-consecutive-blank-lines": true,
+    "max-file-line-count": [true, 250],
+    "file-name-casing": [true, "camel-case", "pascal-case"],
+    "variable-name": {
+      "options": [
+        "ban-keywords",
+        "check-format",
+        "require-const-for-all-caps",
+        "allow-leading-underscore",
+        "allow-pascal-case"
+      ]
+    }
+  }
+}

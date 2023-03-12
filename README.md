@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# CV Builder Project
+
+Techs: TypeScript, React, Styled-Components
+
+example:
+![Cv buildrer](./picture.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

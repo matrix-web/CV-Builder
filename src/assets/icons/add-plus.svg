@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs>
+    <g id="plus">
+      <line fill-rule="evenodd" stroke="currentColor" fill="currentColor" x1="16" x2="16" y1="7" y2="25" />
+      <line fill-rule="evenodd" stroke="currentColor" fill="currentColor" x1="7" x2="25" y1="16" y2="16" />
+    </g>
+</svg>
