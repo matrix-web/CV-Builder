@@ -64,6 +64,7 @@ export interface IAbout {
   post: string;
   phone: string;
   email: string;
+  avatar?: string;
   description?: string;
   website?: string;
 } 

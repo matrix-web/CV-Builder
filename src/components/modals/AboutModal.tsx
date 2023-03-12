@@ -39,6 +39,7 @@ const INITIAL_FORM_STATE: IAbout = {
   firstname: "",
   lastname: "",
   description: "",
+  avatar: "",
   post: "",
   phone: "",
   email: "",

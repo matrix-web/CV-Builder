@@ -9,7 +9,6 @@ import {
   Range, 
 } from "@/components/UI";
 import { ModalContext } from "@/contexts/ModalContext";
-import avatarImg from "@/assets/img/avatar.jpg";
 import { ResumeContext } from "@/contexts/ResumeContext";
 import { IAbout, ISkill, IWorkExp, ResumeActionTypes } from "@/models";
 import {
@@ -41,6 +40,7 @@ export const About: FC<AboutProps> = (props): JSX.Element => {
     info = {
       address: "",
       firstname: "",
+      avatar:  "",
       lastname: "",
       post: "",
       phone: "",
@@ -69,12 +69,35 @@ export const About: FC<AboutProps> = (props): JSX.Element => {
     })
   }
 
+  const handleInputChange = (event: any) => {
+    const file = event.target.files[0];
+    const previewUrl = URL.createObjectURL(file);
+
+    dispatch({
+      type: ResumeActionTypes.SET_ABOUT,
+      payload: {
+        ...state.about,
+        avatar: previewUrl
+      }
+    })
+  }
+
+  const handleClickAvatar = () => {
+    const inputElement = document.createElement("input");
+    inputElement.type = "file";
+    inputElement.click();
+
+    inputElement.addEventListener("change", handleInputChange)
+  }
+
   return (
     <StyledWrapper>
       <StyledAvatarWrapper>
         <Avatar 
-          img={{src: avatarImg, alt: "avatar"}} 
-          variant={AvatarVariants.XHUGE} 
+          img={{src: state.about.avatar ?? "", alt: `${state.about.firstname} ${state.about.lastname}`}} 
+          variant={AvatarVariants.XHUGE}
+          isClickable
+          onClick={handleClickAvatar} 
         />
       </StyledAvatarWrapper>
       { info.firstname && info.lastname ? 
